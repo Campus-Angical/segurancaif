@@ -9,23 +9,27 @@ class SingupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 8, 81, 10),
-        title: Text('Cadastro')),
+        backgroundColor: const Color.fromARGB(255, 8, 81, 10),
+        title: Text('Cadastro')
+        ),
       body: Form(
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   icon: Icon(Icons.person),
                   hintText: 'Nome:'),
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   icon: Icon(Icons.email),
-                  hintText: 'E-mail:'),
+                  hintText: 'E-mail:',
+                  ),
               ),
               TextFormField(
-                decoration: InputDecoration(
+                keyboardType: TextInputType.text,
+                obscureText: true,
+                decoration: const InputDecoration(
                   icon: Icon(Icons.lock),
                   hintText: 'Senha:')
                 ),
