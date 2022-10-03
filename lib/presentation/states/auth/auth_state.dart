@@ -1,4 +1,4 @@
-import 'package:segurancaif/domain/entities/seguranca.dart';
+import 'package:segurancaif/domain/entities/usuario.dart';
 
 class AuthState {}
 
