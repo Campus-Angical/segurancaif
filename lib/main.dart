@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:segurancaif/presentation/controllers/auth/auth_controller.dart';
 import 'package:segurancaif/presentation/getx/bindings.dart';
 import 'package:segurancaif/presentation/pages/auth/login_screen.dart';
-import 'package:segurancaif/presentation/pages/home_page.dart';
+import 'package:segurancaif/presentation/pages/chaves_page.dart';
 import 'package:segurancaif/presentation/states/auth/auth_state.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends GetWidget<AuthCtrl> {
         }
 
         if (controller.state is AuthenticatedState) {
-          return HomePage();
+          return ChavesPage();
         }
 
         return Container();

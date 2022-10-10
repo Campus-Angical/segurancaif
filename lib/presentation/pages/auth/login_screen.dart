@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 
@@ -13,13 +14,13 @@ class LoginScreen extends StatelessWidget {
           left: 40,
           right: 40,
         ),
-        color: const Color.fromARGB(255, 255, 253, 253),
+        color: Color.fromARGB(255, 239, 244, 239),
         child: ListView(
           children: <Widget>[
             SizedBox(
               width: 128,
               height: 128,
-              child: Image.network("https://viciados.net/wp-content/uploads/2020/11/treinamento-em-seguranca-da-informacao.jpg"),
+              child: Image.network("https://img2.gratispng.com/20180427/sqq/kisspng-computer-icons-avatar-sea-captain-captain-vector-5ae37fd2f21d42.9439048515248588349917.jpg"),
             ),
             const SizedBox(
               height: 20,
@@ -49,39 +50,12 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               style: const TextStyle(fontSize: 20),
-            ),   
-            Container(
-              height: 40,
-              alignment: Alignment.centerRight,
-              child: const Text(
-                "Recuperar Senha",
-                textAlign: TextAlign.right,                
-                ),
             ),
-            const SizedBox(
-              height: 40,
-            ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3,1],
-                  colors: [
-                       Color.fromARGB(15, 13, 9, 6),
-                       Color.fromARGB(15, 13, 9, 6),
-                  ],
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5)
-                  ),
-              ),
-              ),
-          ],
-        ),
-      ),
-    );
+            OutlinedButton(onPressed:  (() {}), child: Text('Login')),
+            OutlinedButton(onPressed:  (() {}), child: Text('Registrar com GooGle')),
+             ],
+           ),
+         ),
+     );
   }
 }

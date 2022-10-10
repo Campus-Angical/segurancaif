@@ -10,7 +10,8 @@ class SingupPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 8, 81, 10),
-        title: Text('Cadastro')
+        title: Text('Cadastro'),
+        
         ),
       body: Form(
           child: Column(

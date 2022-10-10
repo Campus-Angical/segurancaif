@@ -12,11 +12,30 @@ class HomePage extends GetWidget<HomeCtrl> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 8, 81, 10),
+        backgroundColor: Color.fromARGB(255, 9, 114, 13),
         title: Text('Segurança_IF'),
       ),
       drawer: Drawer(
-        backgroundColor: Color.fromARGB(245, 23, 5, 7),
+        backgroundColor: Color.fromARGB(245, 133, 191, 132),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text("Chaves"),
+                onTap: () {
+                  debugPrint('toquei no drawer');
+            }),
+            ListTile(
+              title: Text("Agendamento"),
+              onTap: () {
+                debugPrint('toquei no drawer');
+            }),
+            ListTile(
+              title: Text("Historico"),
+              onTap: () {
+                debugPrint('toquei no drawer');
+            }),
+          ],
+        ),
       ),
       body: Form(
         child: Column(
@@ -27,9 +46,13 @@ class HomePage extends GetWidget<HomeCtrl> {
                   icon: Icon(Icons.person), hintText: 'Matricula:'),
             ),
             TextFormField(
+              keyboardType: TextInputType.text,
+              obscureText: true,
               controller: chaveCtrl,
               decoration: const InputDecoration(
-                  icon: Icon(Icons.key), hintText: 'Cod.Chave'),
+                  icon: Icon(Icons.key),
+                   hintText: 'Cod.Chave'
+                   ),
             ),
             OutlinedButton(
                 onPressed: (() {
