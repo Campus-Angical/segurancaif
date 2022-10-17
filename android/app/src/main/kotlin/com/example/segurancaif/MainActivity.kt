@@ -1,4 +1,4 @@
-package com.example.segurancaif
+package br.ifpi.edu.segurancaif
 
 import io.flutter.embedding.android.FlutterActivity
 

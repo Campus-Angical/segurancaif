@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:segurancaif/presentation/controllers/auth/auth_controller.dart';
 import 'package:segurancaif/presentation/getx/bindings.dart';
+import 'package:segurancaif/presentation/pages/Agenda_page.dart';
 import 'package:segurancaif/presentation/pages/auth/login_screen.dart';
-import 'package:segurancaif/presentation/pages/chaves_page.dart';
+import 'package:segurancaif/presentation/pages/chave/chave_list_page.dart';
+import 'package:segurancaif/presentation/pages/home_page.dart';
 import 'package:segurancaif/presentation/states/auth/auth_state.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(GetMaterialApp(
     home: const MyApp(),
     initialBinding: DependenciesBinding(),
@@ -29,7 +35,7 @@ class MyApp extends GetWidget<AuthCtrl> {
         }
 
         if (controller.state is AuthenticatedState) {
-          return ChavesPage();
+          return ChaveListPage();
         }
 
         return Container();

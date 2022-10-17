@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.segurancaif">
+    package="br.ifpi.edu.segurancaif">
    <application
         android:label="segurancaif"
         android:name="${applicationName}"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "221629751773",
+    "project_id": "segurancaif-fa680",
+    "storage_bucket": "segurancaif-fa680.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221629751773:android:af5d55726c01e43d0a9634",
+        "android_client_info": {
+          "package_name": "br.ifpi.edu.segurancaif"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221629751773-l2noigmf0aqa2191msagdqf9ar82sg54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADqeTjlPWDONa-t1QBVdG9QVm0i4XY4dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221629751773-l2noigmf0aqa2191msagdqf9ar82sg54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
