@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -31,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 icon: Icon(Icons.email),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
-                  color: Colors.black38,
+                  color: Color.fromARGB(157, 0, 0, 0),
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ), 
@@ -41,18 +42,25 @@ class LoginScreen extends StatelessWidget {
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: const InputDecoration(
+                
                 icon: Icon(Icons.lock),
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.black38,
+                  color: Color.fromARGB(157, 0, 0, 0),
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
               style: const TextStyle(fontSize: 20),
             ),
-            OutlinedButton(onPressed:  (() {}), child: Text('Login')),
-            OutlinedButton(onPressed:  (() {}), child: Text('Registrar com GooGle')),
+            ElevatedButton(
+                  onPressed: (() {
+                  print('Conectado');
+                }), child: const Text('Conecte-se com Google')),
+                ElevatedButton(
+                  onPressed: (() {
+                  print('Conectado');
+                }), child: const Text('Continuar com Facebook'))
              ],
            ),
          ),

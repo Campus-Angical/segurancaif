@@ -9,12 +9,17 @@ class SingupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 8, 81, 10),
-        title: Text('Cadastro'),
-        
+        title: const Text('Cadastro',
+        style: TextStyle(
+          fontSize: 30,
+        ),
+        ),
         ),
       body: Form(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 decoration: const InputDecoration(
@@ -34,9 +39,15 @@ class SingupPage extends StatelessWidget {
                   icon: Icon(Icons.lock),
                   hintText: 'Senha:')
                 ),
-                OutlinedButton(onPressed:  (() {}), child: Text('Criar')),
+                ElevatedButton(
+                  onPressed: (() {
+                  print('Conta criada');
+                }), child: Text('Criar')),
                 Text('Ou'),
-                OutlinedButton(onPressed:  (() {}), child: Text('Registra com Google')),
+                ElevatedButton(
+                  onPressed: (() {
+                  print('Registrado com sucesso');
+                }), child: Text('Registrar com Google'))
             ]),
         ),
     );

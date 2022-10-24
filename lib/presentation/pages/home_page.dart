@@ -12,11 +12,17 @@ class HomePage extends GetWidget<HomeCtrl> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 10,
+        centerTitle: true,
         backgroundColor: Color.fromARGB(255, 9, 114, 13),
-        title: Text('Segurança_IF'),
+        title: Text('Segurança_IF',
+        style: TextStyle(
+          fontSize: 30,
+        ),
+        ),
       ),
       drawer: Drawer(
-        backgroundColor: Color.fromARGB(245, 133, 191, 132),
+        backgroundColor: Color.fromARGB(245, 112, 255, 109),
         child: ListView(
           children: <Widget>[
             ListTile(

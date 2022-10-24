@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:segurancaif/presentation/controllers/auth/auth_controller.dart';
 import 'package:segurancaif/presentation/getx/bindings.dart';
-import 'package:segurancaif/presentation/pages/Agenda_page.dart';
+import 'package:segurancaif/presentation/pages/reserva/reserva_form_page.dart';
 import 'package:segurancaif/presentation/pages/auth/login_screen.dart';
 import 'package:segurancaif/presentation/pages/chave/chave_list_page.dart';
 import 'package:segurancaif/presentation/pages/home_page.dart';
@@ -35,7 +35,7 @@ class MyApp extends GetWidget<AuthCtrl> {
         }
 
         if (controller.state is AuthenticatedState) {
-          return ChaveListPage();
+          return ReservaForm();
         }
 
         return Container();

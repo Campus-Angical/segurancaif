@@ -10,6 +10,7 @@ class ChaveListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Color.fromARGB(255, 9, 114, 13),
           title: Text('Chaves'),
         ),
@@ -36,7 +37,8 @@ class ChaveListPage extends StatelessWidget {
                   return CircularProgressIndicator();
                 }))
           ],
-        ));
+        ),
+        );
   }
 
   List<Widget> buildItensList(List<Sala> salas) {
