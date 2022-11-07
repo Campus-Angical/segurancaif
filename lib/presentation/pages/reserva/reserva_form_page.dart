@@ -68,6 +68,10 @@ class _ReservaFormState extends State<ReservaForm> {
           ElevatedButton(
               onPressed: (() {
                 controller.submit(matriculaController.text, datahora, chaveController.text);
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Reserva Realizada com Sucesso!"),
+                    backgroundColor: Colors.green,
+                ));
               }),
               child: Text('Confirmar'))
         ]),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:segurancaif/presentation/controllers/home_ctrl.dart';
 
 class HomePage extends GetWidget<HomeCtrl> {
+  
   TextEditingController matriculaCtrl = TextEditingController();
   TextEditingController chaveCtrl = TextEditingController();
 
@@ -60,7 +61,7 @@ class HomePage extends GetWidget<HomeCtrl> {
                    hintText: 'Cod.Chave'
                    ),
             ),
-            OutlinedButton(
+            ElevatedButton(
                 onPressed: (() {
                   controller.addReserva(matriculaCtrl.text, chaveCtrl.text);
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

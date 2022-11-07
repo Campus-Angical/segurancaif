@@ -38,6 +38,7 @@ class SingupPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   icon: Icon(Icons.lock),
                   hintText: 'Senha:')
+                  
                 ),
                 ElevatedButton(
                   onPressed: (() {
