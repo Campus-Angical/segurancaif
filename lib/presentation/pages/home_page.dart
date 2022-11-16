@@ -54,7 +54,6 @@ class HomePage extends GetWidget<HomeCtrl> {
             ),
             TextFormField(
               keyboardType: TextInputType.text,
-              obscureText: true,
               controller: chaveCtrl,
               decoration: const InputDecoration(
                   icon: Icon(Icons.key),
