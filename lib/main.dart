@@ -56,7 +56,7 @@ class MyApp extends GetWidget<AuthCtrl> {
         }
 
         if (controller.state is AuthenticatedState) {
-          return ChaveListPage();
+          return HomePage();
         }
 
         return Container();
@@ -100,7 +100,7 @@ class App extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) {
-          return ChaveListPage();
+          return HomePage();
         },
         '/sign-in': ((context) {
           return SignInScreen(

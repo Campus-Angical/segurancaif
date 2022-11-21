@@ -5,6 +5,7 @@ import 'package:segurancaif/presentation/controllers/chave/chave_list_ctrl.dart'
 import 'package:flutter/material.dart';
 import 'package:segurancaif/domain/entities/sala.dart';
 import 'package:segurancaif/presentation/controllers/chave/chave_list_ctrl.dart';
+import 'package:segurancaif/presentation/pages/historico_page.dart';
 
 class ChaveListPage extends StatefulWidget {
   final ChaveListCtrl controller = ChaveListCtrl();
@@ -38,7 +39,6 @@ class _ChaveListPageState extends State<ChaveListPage> {
                   
                   child: ElevatedButton(
                     onPressed: (() {
-
                       setState(() {
                         widget.controller.disponivel = null;
                       });

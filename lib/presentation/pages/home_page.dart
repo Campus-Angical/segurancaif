@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:segurancaif/presentation/controllers/home_ctrl.dart';
+import 'package:segurancaif/presentation/pages/chave/chave_list_page.dart';
 
 class HomePage extends GetWidget<HomeCtrl> {
   
@@ -29,6 +30,8 @@ class HomePage extends GetWidget<HomeCtrl> {
             ListTile(
               title: Text("Chaves"),
                 onTap: () {
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: ((context) => ChaveListPage())));
                   debugPrint('toquei no drawer');
             }),
             ListTile(
