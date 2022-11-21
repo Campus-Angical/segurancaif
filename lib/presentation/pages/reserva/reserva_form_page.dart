@@ -1,6 +1,7 @@
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:segurancaif/domain/entities/usuario.dart';
 import 'package:segurancaif/presentation/controllers/reserva/reserva_form_ctrl.dart';
 
 class ReservaForm extends StatefulWidget {
@@ -11,12 +12,11 @@ class ReservaForm extends StatefulWidget {
 }
 
 class _ReservaFormState extends State<ReservaForm> {
-
-
   ReservaFormCrtl controller = ReservaFormCrtl();
-  DateTime datahora = DateTime.now();
   TextEditingController matriculaController = TextEditingController();
   TextEditingController chaveController = TextEditingController();
+
+  DateTime datahora = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +25,29 @@ class _ReservaFormState extends State<ReservaForm> {
         elevation: 10,
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 9, 114, 13),
-        title: Text(
+        title: const Text(
           'Agendamento',
           style: TextStyle(
             fontSize: 30,
           ),
         ),
       ),
-      drawer: Drawer(
+      drawer: const Drawer(
         backgroundColor: Color.fromARGB(245, 112, 255, 109),
       ),
       body: Form(
         child: Column(children: [
+          Autocomplete<Usuario>(
+            optionsBuilder: (textEditingValue) async {
+              return (await controller
+                      .buscaUsuariosPorMatricula(textEditingValue.text))
+                  .fold((l) => [], (r) => r);
+            },
+            displayStringForOption: (usuario) =>
+                '${usuario.matricula} - ${usuario.nome}',
+
+                
+          ),
           TextFormField(
             controller: matriculaController,
             decoration: const InputDecoration(
@@ -67,7 +78,8 @@ class _ReservaFormState extends State<ReservaForm> {
           ),
           ElevatedButton(
               onPressed: (() {
-                controller.submit(matriculaController.text, datahora, chaveController.text);
+                controller.submit(
+                    matriculaController.text, datahora, chaveController.text);
               }),
               child: Text('Confirmar'))
         ]),

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:segurancaif/firebase_options.dart';
 import 'package:segurancaif/presentation/controllers/auth/auth_controller.dart';
 import 'package:segurancaif/presentation/getx/bindings.dart';
 import 'package:segurancaif/presentation/pages/reserva/reserva_form_page.dart';
@@ -11,7 +12,9 @@ import 'package:segurancaif/presentation/states/auth/auth_state.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(GetMaterialApp(
     home: const MyApp(),
