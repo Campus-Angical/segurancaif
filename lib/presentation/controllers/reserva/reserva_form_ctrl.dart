@@ -10,7 +10,7 @@ class ReservaFormCrtl {
   ReservaRepository repository = ReservaRepository();
   
   Future<Either<Failure,String>> submit(String matricula, DateTime datahora, String chave) {
-    Reserva reserva = Reserva('', Usuario('', matricula, '', ''), Sala('', '', chave), datahora);
+    Reserva reserva = Reserva('', Usuario('', matricula, '', ''), Sala('', '', chave, true), datahora);
     return repository.insert(reserva);
   }
 

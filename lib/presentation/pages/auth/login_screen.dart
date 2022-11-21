@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               width: 128,
               height: 128,
-              child: Image.network("https://img2.gratispng.com/20180427/sqq/kisspng-computer-icons-avatar-sea-captain-captain-vector-5ae37fd2f21d42.9439048515248588349917.jpg"),
+              child: Image.network("")
             ),
             const SizedBox(
               height: 20,
@@ -59,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                 }), child: const Text('Conecte-se com Google')),
                 ElevatedButton(
                   onPressed: (() {
-                  print('Conectado');
+                  print('Conectado com Face');
                 }), child: const Text('Continuar com Facebook'))
              ],
            ),

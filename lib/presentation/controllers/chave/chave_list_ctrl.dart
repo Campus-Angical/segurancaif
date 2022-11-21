@@ -6,9 +6,10 @@ import 'package:segurancaif/domain/failures/failures.dart';
 class ChaveListCtrl {
 
   SalaRepository repository = SalaRepository();
+  bool? disponivel;
 
   Future<Either<Failure, List<Sala>>> search(){
-    return repository.all();
+    return repository.buscarPorDisponivel(disponivel);
   }
 
 }
