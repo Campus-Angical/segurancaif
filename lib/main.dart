@@ -53,7 +53,7 @@ class MyApp extends GetWidget<AuthCtrl> {
         }
 
         if (controller.state is AuthenticatedState) {
-          return HistoriPage();
+          return ChaveListPage();
         }
 
         return Container();
@@ -70,8 +70,8 @@ class ApplicationState extends ChangeNotifier {
   bool get loggedIn => _loggedIn;
 
  Future<void> init() async {
-    await Firebase.initializeApp(
-        //options: DefaultFirebaseOptions.currentPlatform);
+    /*await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);*/
 
     FirebaseUIAuth.configureProviders([
       EmailAuthProvider(),
@@ -97,7 +97,7 @@ class App extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) {
-          return HomePage();
+          return ChaveListPage();
         },
         '/sign-in': ((context) {
           return SignInScreen(
