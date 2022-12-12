@@ -1,17 +1,17 @@
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:segurancaif/domain/entities/usuario.dart';
 import 'package:segurancaif/presentation/controllers/reserva/reserva_form_ctrl.dart';
+import 'package:segurancaif/presentation/widgets/my_drawer.dart';
 
-class ReservaForm extends StatefulWidget {
-  const ReservaForm({super.key});
+class ReservaFormPage extends StatefulWidget {
+  const ReservaFormPage({super.key});
 
   @override
-  State<ReservaForm> createState() => _ReservaFormState();
+  State<ReservaFormPage> createState() => _ReservaFormPageState();
 }
 
-class _ReservaFormState extends State<ReservaForm> {
+class _ReservaFormPageState extends State<ReservaFormPage> {
   ReservaFormCrtl controller = ReservaFormCrtl();
   TextEditingController matriculaController = TextEditingController();
   TextEditingController chaveController = TextEditingController();
@@ -32,30 +32,17 @@ class _ReservaFormState extends State<ReservaForm> {
           ),
         ),
       ),
-      drawer: const Drawer(
-        backgroundColor: Color.fromARGB(245, 112, 255, 109),
-      ),
+      drawer: MyDrawer(),
       body: Form(
         child: Column(children: [
-          Autocomplete<Usuario>(
-            optionsBuilder: (textEditingValue) async {
-              return (await controller
-                      .buscaUsuariosPorMatricula(textEditingValue.text))
-                  .fold((l) => [], (r) => r);
-            },
-            displayStringForOption: (usuario) =>
-                '${usuario.matricula} - ${usuario.nome}',
-
-                
-          ),
           TextFormField(
             controller: matriculaController,
             decoration: const InputDecoration(
-                icon: Icon(Icons.person), hintText: 'Matricula:'),
+                icon: Icon(Icons.person), hintText: 'Matricula:'),   
           ),
           DateTimePicker(
             type: DateTimePickerType.dateTimeSeparate,
-            dateMask: 'dd/MM/yyyy',
+            dateMask: 'yyyy-MM-dd',
             initialValue: '',
             firstDate: DateTime(2000),
             lastDate: DateTime(2100),
@@ -63,7 +50,7 @@ class _ReservaFormState extends State<ReservaForm> {
             timeLabelText: "Hora",
             icon: Icon(Icons.event),
             onChanged: (val) {
-              datahora = DateFormat('dd/MM/yyyy').parse(val);
+              datahora = DateFormat('yyyy-MM-dd').parse(val);
             },
             validator: (val) {
               print(val);
@@ -75,18 +62,30 @@ class _ReservaFormState extends State<ReservaForm> {
             controller: chaveController,
             decoration: const InputDecoration(
                 icon: Icon(Icons.key_off_outlined), hintText: 'Cod.Chave'),
+                
           ),
           ElevatedButton(
               onPressed: (() {
-                controller.submit(matriculaController.text, datahora, chaveController.text);
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                controller
+                    .submit(matriculaController.text, datahora,
+                        chaveController.text)
+                    .then((value) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Reserva Realizada com Sucesso!"),
                     backgroundColor: Colors.green,
-                ));
+                  ));
+                  Navigator.of(context).pop();
+                }).catchError((error) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Erro!"),
+                    backgroundColor: Colors.red,
+                  ));
+                });
               }),
               child: Text('Confirmar'))
         ]),
       ),
+      backgroundColor: Colors.green,
     );
   }
 }

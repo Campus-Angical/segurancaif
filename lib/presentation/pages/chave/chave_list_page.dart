@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:segurancaif/domain/entities/sala.dart';
 import 'package:segurancaif/presentation/controllers/chave/chave_list_ctrl.dart';
-
-import 'package:flutter/material.dart';
-import 'package:segurancaif/domain/entities/sala.dart';
-import 'package:segurancaif/presentation/controllers/chave/chave_list_ctrl.dart';
-import 'package:segurancaif/presentation/pages/historico_page.dart';
+import 'package:segurancaif/presentation/pages/reserva/reserva_form_page.dart';
+import 'package:segurancaif/presentation/widgets/my_drawer.dart';
 
 class ChaveListPage extends StatefulWidget {
   final ChaveListCtrl controller = ChaveListCtrl();
@@ -24,7 +21,7 @@ class _ChaveListPageState extends State<ChaveListPage> {
         backgroundColor: Color.fromARGB(255, 9, 114, 13),
         title: Text('Chaves'),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: Column(
         children: [
           Container(
@@ -92,6 +89,7 @@ class _ChaveListPageState extends State<ChaveListPage> {
               }))
         ],
       ),
+      backgroundColor: Colors.green,
     );
   }
 
